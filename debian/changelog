@@ -1,0 +1,106 @@
+node-minimatch (3.0.4+~3.0.3-1) unstable; urgency=medium
+
+  * Team upload
+  * Bump debhelper compatibility level to 13
+  * Use dh-sequence-nodejs
+  * Embed @types/minimatch and repack
+  * Add a break against node-typescript-types < 20201105-1~
+
+ -- Xavier Guimard <yadd@debian.org>  Thu, 05 Nov 2020 11:07:32 +0100
+
+node-minimatch (3.0.4-4) unstable; urgency=medium
+
+  * Team upload
+  [ Jelmer Vernooĳ ]
+  * Remove unnecessary 'Testsuite: autopkgtest' header.
+  * Use secure copyright file specification URI.
+
+  [ Xavier Guimard ]
+  * Declare compliance with policy 4.5.0
+  * Bump debhelper compatibility level to 12
+  * Update VCS fields to salsa
+  * Use pkg-js-tools auto test & install
+  * Update copyright
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Add upstream/metadata
+
+ -- Xavier Guimard <yadd@debian.org>  Thu, 19 Mar 2020 18:40:50 +0100
+
+node-minimatch (3.0.4-3) unstable; urgency=medium
+
+  * Team upload
+  * set section to javascript
+  * Bump policy (no changes)
+  * Upload to unstable
+
+ -- Bastien Roucariès <rouca@debian.org>  Thu, 24 Aug 2017 23:47:29 +0200
+
+node-minimatch (3.0.4-2) experimental; urgency=medium
+
+  * Team upload
+  * Install package.json
+  * Install under /usr/lib/nodejs/minimatch
+    instead of /usr/lib/nodejs.
+  * Update copyright
+
+ -- Bastien Roucariès <rouca@debian.org>  Sun, 13 Aug 2017 23:36:59 +0200
+
+node-minimatch (3.0.4-1) unstable; urgency=medium
+
+  [ Pirate Praveen ]
+  * Team upload
+  * New upstream release
+
+  [ Bastien Roucariès ]
+  * Bump policy no change
+  * Bump compat
+  * Enable testsuite
+  * Run autopkgtest suite in isolation
+
+ -- Bastien Roucariès <rouca@debian.org>  Sun, 13 Aug 2017 22:44:56 +0200
+
+node-minimatch (3.0.3-1) unstable; urgency=medium
+
+  * New upstream version 3.0.3 (Closes: #843087)
+  * License switch to ISC
+  * Standards-Version 3.9.8
+  * Secure Vcs url
+  * Depends only on node-brace-expansion
+  * Bump debhelper to 9
+  * autopkgtest
+  * Patch to run tests using old tap
+
+ -- Jérémy Lal <kapouer@melix.org>  Fri, 04 Nov 2016 00:35:44 +0100
+
+node-minimatch (1.0.0-1) unstable; urgency=medium
+
+  * Standards-Version: 3.9.5
+  * Move to pkg-javascript
+  * Imported Upstream version 1.0.0
+
+ -- Jérémy Lal <kapouer@melix.org>  Tue, 29 Jul 2014 02:16:43 +0200
+
+node-minimatch (0.2.12-1) unstable; urgency=low
+
+  * Upstream update
+  * control:
+    + canonicalize Vcs fields
+    + Standards-Version 3.9.4
+
+ -- Jérémy Lal <kapouer@melix.org>  Thu, 15 Aug 2013 15:58:52 +0200
+
+node-minimatch (0.2.11-1) experimental; urgency=low
+
+  * Upstream update.
+  * Add dependency on node-sigmund.
+  * Tighten dependency on node-lru-cache >= 2.
+  * Use github url in watch file.
+
+ -- Jérémy Lal <kapouer@melix.org>  Sat, 23 Mar 2013 09:48:02 +0100
+
+node-minimatch (0.2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #664143)
+
+ -- Jérémy Lal <kapouer@melix.org>  Sat, 17 Mar 2012 23:33:28 +0100

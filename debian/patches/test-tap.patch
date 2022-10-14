@@ -1,0 +1,47 @@
+Description: run tests with old tap version
+Author: Jérémy Lal <kapouer@melix.org>
+Last-Update: 2016-11-04
+Forwarded: not-needed
+--- a/test/redos.js
++++ b/test/redos.js
+@@ -1,4 +1,4 @@
+-var t = require('tap')
++var tap = require('tap')
+ 
+ var minimatch = require('../')
+ 
+@@ -14,15 +14,25 @@
+ 
+ var exploit = '!(' + genstr(1024 * 15, '\\') + 'A)'
+ 
+-// within the limits, and valid match
+-t.ok(minimatch('A', exploit))
++tap.test('redos tests', function(t) {
++  // within the limits, and valid match
++  t.ok(minimatch('A', exploit))
+ 
+-// within the limits, but results in an invalid regexp
+-exploit = '[!(' + genstr(1024 * 15, '\\') + 'A'
+-t.notOk(minimatch('A', exploit))
++  // within the limits, but results in an invalid regexp
++  exploit = '[!(' + genstr(1024 * 15, '\\') + 'A'
++  t.notOk(minimatch('A', exploit))
+ 
+-t.throws(function () {
++
++  
+   // too long, throws TypeError
+-  exploit = '!(' + genstr(1024 * 64, '\\') + 'A)'
+-  minimatch('A', exploit)
+-}, TypeError)
++	var err;
++  try {
++    exploit = '!(' + genstr(1024 * 64, '\\') + 'A)'
++    minimatch('A', exploit)
++  } catch(ex) {
++    err = ex;
++  }
++  t.ok(err instanceof TypeError)
++
++  t.end()
++})
