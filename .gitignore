@@ -1,1 +1,3 @@
-.pc/
+/dist
+/coverage
+/node_modules

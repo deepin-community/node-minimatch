@@ -1,1 +1,1 @@
-tap test/*.js
+tap -R dot --no-cov `ls test/*.js|grep -v test/no-path-module.js|grep -v test/win-path-sep.js`

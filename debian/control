@@ -1,26 +1,28 @@
 Source: node-minimatch
-Section: javascript
-Priority: optional
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Jérémy Lal <kapouer@melix.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
 Build-Depends: debhelper-compat (= 13)
- , node-brace-expansion (>= 1.1.7)
- , node-tap (>= 8.0)
  , dh-sequence-nodejs
-Standards-Version: 4.5.0
+ , node-brace-expansion <!nocheck>
+ , node-tap (>= 15) <!nocheck>
+ , node-types-brace-expansion
+ , ts-node
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/js-team/node-minimatch
 Vcs-Git: https://salsa.debian.org/js-team/node-minimatch.git
 Homepage: https://github.com/isaacs/minimatch
-Testsuite: autopkgtest-pkg-nodejs
 Rules-Requires-Root: no
 
 Package: node-minimatch
 Architecture: all
 Depends: ${misc:Depends}
- , node-brace-expansion (>= 1.1.7)
- , nodejs
-Provides: ${nodejs:Provides}
+ , node-brace-expansion
 Breaks: node-typescript-types (<< 20201105-1~)
+ , node-glob (<< 8.0.3+~cs8.4.15-2~)
+Provides: ${nodejs:Provides}
 Description: Convert glob expressions into RegExp objects for Node.js
  A pure javascript, not strictly compatible, implementation of fnmatch/glob.
  Supports negation, comment, double-star, brace expansion.
