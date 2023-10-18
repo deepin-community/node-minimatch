@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: minimatch
-Source: 
+Source: https://github.com/isaacs/minimatch/tags
  https://registry.npmjs.org/@types/minimatch
 
 Files: *
@@ -14,7 +14,7 @@ License: Expat
 Files: debian/*
 Copyright: 2012, Jérémy Lal <kapouer@melix.org>
  2017, Bastien Roucariès <rouca@debian.org>
- 2020, Xavier Guimard <yadd@debian.org>
+ 2020, Yadd <yadd@debian.org>
 License: ISC
 
 License: Expat

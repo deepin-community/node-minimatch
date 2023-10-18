@@ -1,0 +1,25 @@
+Description: keep a default export at least in commonjs using custom index.js
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2023-09-22
+
+--- node-minimatch-9.0.3.orig/package.json
++++ node-minimatch-9.0.3/package.json
+@@ -7,7 +7,7 @@
+     "type": "git",
+     "url": "git://github.com/isaacs/minimatch.git"
+   },
+-  "main": "./dist/cjs/index.js",
++  "main": "./index.js",
+   "module": "./dist/mjs/index.js",
+   "types": "./dist/cjs/index.d.ts",
+   "exports": {
+@@ -18,7 +18,7 @@
+       },
+       "require": {
+         "types": "./dist/cjs/index.d.ts",
+-        "default": "./dist/cjs/index.js"
++        "default": "./index.js"
+       }
+     }
+   },
