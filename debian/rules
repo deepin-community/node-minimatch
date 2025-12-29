@@ -11,4 +11,5 @@ override_dh_auto_build:
 	tsc
 	tsc -p tsconfig-esm.json
 	echo '{"type":"module"}' >dist/mjs/package.json
+	rollup -m --format=commonjs -p @rollup/plugin-commonjs -p @rollup/plugin-node-resolve -p rollup-plugin-terser --file=dist/cjs/index.bundle.js -- dist/cjs/index.js
 	cp debian/index.js .
