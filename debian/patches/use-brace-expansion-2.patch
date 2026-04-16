@@ -1,0 +1,13 @@
+Description: Use brace-expansion 2.x default export instead of 5.x named export
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2026-04-06
+
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -1,4 +1,4 @@
+-import { expand } from 'brace-expansion'
++import expand from 'brace-expansion'
+ import { assertValidPattern } from './assert-valid-pattern.js'
+ import { AST, ExtglobType } from './ast.js'
+ import { escape } from './escape.js'

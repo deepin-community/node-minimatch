@@ -8,8 +8,13 @@
 	dh $@
 
 override_dh_auto_build:
-	tsc
-	tsc -p tsconfig-esm.json
-	echo '{"type":"module"}' >dist/mjs/package.json
-	rollup -m --format=commonjs -p @rollup/plugin-commonjs -p @rollup/plugin-node-resolve -p rollup-plugin-terser --file=dist/cjs/index.bundle.js -- dist/cjs/index.js
-	cp debian/index.js .
+	tshy
+	cp debian/index.cjs .
+	node -e 'var f="package.json",p=JSON.parse(require("fs").readFileSync(f));p.main="./index.cjs";p.exports["."].require.default="./index.cjs";p.files.push("index.cjs");require("fs").writeFileSync(f,JSON.stringify(p,null,2)+"\n")'
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf .tshy-build dist
+
+override_dh_auto_test:
+	node -e "const m = require('.'); const assert = require('assert'); assert(m('foo.js', '*.js')); assert(!m('foo.js', '*.ts')); assert(m('bar/baz/quux.js', '**/*.js')); console.log('ok')"
