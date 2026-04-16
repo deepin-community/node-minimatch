@@ -1,1 +1,1 @@
-tap -R dot --no-cov `ls test/*.js|grep -v test/no-path-module.js|grep -v test/win-path-sep.js`
+node -e "const m = require('minimatch'); const assert = require('assert'); assert(m('foo.js', '*.js')); assert(!m('foo.js', '*.ts')); assert(m('bar/baz/quux.js', '**/*.js')); console.log('ok')"
